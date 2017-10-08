@@ -20,7 +20,13 @@ class Twitterapi
 
 
   def get_timeline_posts user_handle
-    posts = @twitter_client.user_timeline(user_handle)
+    ##rescue if user handle is bad or has no posts
+    begin
+      posts = @twitter_client.user_timeline(user_handle)
+    rescue => ex
+      posts = []
+    end
+
   end
 
 

@@ -4,12 +4,12 @@
 
 <%= form_tag("search", remote: true) do %>
   <h2> Twitter Handle </h2>
-  <%= text_field_tag(:twitter_handle) %>
+  <%= text_field_tag :twitter_handle, "", :id => "handle" %>
   <%= submit_tag "Search", :id => "search" %>
 <% end %>
 
 
-<h1 id="results-list", hidden=true>Posts</h1>
+<h1 id="results-list">Posts</h1>
 
 
 

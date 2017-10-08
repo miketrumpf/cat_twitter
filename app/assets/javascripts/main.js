@@ -24,11 +24,11 @@ $(function() {
 
   $("body").on("click", "#search", function(e){
     e.preventDefault();
-    debugger
+    var twitterHandle = $("#handle").val()
     $.ajax({
       url: '/posts/search',
       dataType: 'script',
-      method: "get"
+      data: {twitterHandle}
     }); // end ajax
   }); // end click
 });
