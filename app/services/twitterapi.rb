@@ -1,9 +1,10 @@
+require "httparty"
 class Twitterapi
 
   ##utilizing the twitter gem
   def initialize
-    api_key = '45429112'
-    api_secret = "fbc6b2b41130f55fb4243bed7bd4a66fa5559222"
+    api_key = '05vsmea7C8gOT4sHu3H9OIhtr'
+    api_secret = "QAuaAtxagVfksNjzklo2TG11vGzkAaSc8R7rSQX42yjo2vS4ab"
     ##will be current_user.access_token
     access_token = "2613734754-TER8zCABuodD7nhJlnccfE8cQctFDopDLjcBQw5"
     access_token_secret = "y0cwDz3SL7dJgRdEkS6W8kWk31pgZ83xUKaYtTm2uzqV4"
@@ -19,7 +20,7 @@ class Twitterapi
 
 
   def get_timeline_posts user_handle
-    binding.pry
+    posts = @twitter_client.user_timeline(user_handle)
   end
 
 

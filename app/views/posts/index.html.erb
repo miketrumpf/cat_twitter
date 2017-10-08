@@ -1,6 +1,14 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+<p id="notice"><%= notice %></p>
+<h1>Search for A Twitter User's timeline</h1>
+
+<%= form_tag("/posts/search", method: "get") do %>
+  <h2> Twitter Handle </h2>
+  <%= text_field_tag(:twitter_handle) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<h1 class="results" hidden=true >Posts</h1>
 
 <table>
   <thead>
@@ -21,5 +29,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Post', new_post_path %>

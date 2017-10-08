@@ -1,14 +1,19 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
   ## get twitter posts by user handle paramater
   def index
-    ##sort posts read and unread here or conditional on view?
     @posts = Post.all
   end
 
+  ##make this js event that renders partial
+  def search
+    ##initialize twitter gem and get posts for twitter handle
+    twitter_api = Twitterapi.new
+    @posts = twitter_api.get_timeline_posts(params[:twitter_handle])
+    binding.pry
+  end
 
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
@@ -26,14 +31,5 @@ class PostsController < ApplicationController
   end
 
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      params.fetch(:post, {})
-    end
 end
