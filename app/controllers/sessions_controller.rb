@@ -1,14 +1,10 @@
 class SessionsController < ApplicationController
   skip_before_action :require_login!, :only => [:new, :create]
 
-  def new
-    @user = User.new
-  end
 
   def create
-    binding.pry
-    @user = User.find_by_email(params[:login][:email])
-    if @user && @user.authenticate(params[:login][:password])
+    @user = User.find_by_email(params[:email])
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to root_path
     else

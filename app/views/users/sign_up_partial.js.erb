@@ -1,0 +1,2 @@
+$("#sign_in_or_up").empty()
+$("#sign_in_or_up").html("<%= j render :partial => 'sign_up_partial', :locals => {:@user => @user}%>")

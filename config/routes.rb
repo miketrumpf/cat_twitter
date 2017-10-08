@@ -5,7 +5,11 @@ Rails.application.routes.draw do
 
   resources :posts
   resources :users
+  resources :sessions, only: [:create, :destroy]
+
   get "/sign_in" => "sessions#new"
+  get "/sign_in_partial" => "users#sign_in_partial"
+  get "/sign_up_partial" => "users#sign_up_partial"
   post "/callbacks" => "users#callbacks"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

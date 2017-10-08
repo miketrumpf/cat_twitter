@@ -1,0 +1,3 @@
+$("#results-list").empty()
+$("#results-list").hidden = false
+$("#results-list").html("<%= j render :partial => 'results', :locals => {:@posts => @posts}%>")

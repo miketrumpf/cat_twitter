@@ -12,7 +12,6 @@ class PostsController < ApplicationController
     ##initialize twitter gem and get posts for twitter handle
     twitter_api = Twitterapi.new
     @posts = twitter_api.get_timeline_posts(params[:twitter_handle])
-    binding.pry
   end
 
   # PATCH/PUT /posts/1

@@ -3,8 +3,6 @@ class UsersController < ApplicationController
   skip_before_action :require_login!
 
   def sign_in_partial
-    @user = User.new
-
   end
 
   def sign_up_partial
