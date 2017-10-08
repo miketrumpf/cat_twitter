@@ -11,7 +11,8 @@ class PostsController < ApplicationController
   def search
     ##initialize twitter gem and get posts for twitter handle
     twitter_api = Twitterapi.new
-    @posts = twitter_api.get_timeline_posts(params["twitterHandle"])
+    posts = twitter_api.get_timeline_posts(params["twitterHandle"])
+    @posts = PostsHelper.get_good_posts(posts, current_user.id)
   end
 
   # PATCH/PUT /posts/1
