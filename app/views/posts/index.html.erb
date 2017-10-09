@@ -1,5 +1,5 @@
-
 <p id="notice"><%= notice %></p>
+<h5><%= link_to "Logout", "/sessions/#{session[:user_id]}", method: :delete %></h5>
 <h1>Search for A Twitter User's timeline</h1>
 
 <%= form_tag("search", remote: true) do %>

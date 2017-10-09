@@ -4,7 +4,7 @@ module PostsHelper
     good_posts = []
     ##refactor
     posts.each do |post|
-      PostsUsers.where(tweet_id: post.id, user_id: user_id) == [] ? good_posts.push(post) : false
+      PostsUsers.where("tweet_id = ? AND user_id = ?", post.id, user_id)  == [] ? good_posts.push(post) : false
     end
     return good_posts
   end
