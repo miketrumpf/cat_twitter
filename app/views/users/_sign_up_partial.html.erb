@@ -1,12 +1,20 @@
 <h1>Sign Up</h1>
 
 <%= form_for @user do |f| %>
-  <h2> email </h2>
-  <%= f.text_field :email %>
-  <h2> Password </h2>
-  <%= f.text_field :password  %>
-  <h2> Password Confirmation </h2>
-  <%= f.text_field :password_confirmation %>
+<div class="input-group input-group-sm">
+  <!-- <%= text_field_tag :twitter_handle, "", :id => "handle", placeholder: "Username", :class => "form-control" %> -->
+  <!-- <%= text_field_tag :email, params[:email], :placeholder => "email", :class => "form-control" %> -->
+  <%= f.text_field :email, :placeholder => "email", :class => "form-control" %>
+  <%= f.password_field :password, :placeholder => "password", :class => "form-control" %>
+  <!-- <h3>Password</h3>
+  <%= password_field_tag :password, nil, placeholder: "password", class: "form-control" %> -->
+  <%= f.password_field :password_confirmation, :placeholder => "retype password", class: "form-control"  %>
+</div>
+
+
+
+
+
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -19,7 +27,7 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <%= f.submit "Submit", class: "form-control" %>
   </div>
 <% end %>

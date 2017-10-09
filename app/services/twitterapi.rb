@@ -3,11 +3,11 @@ class Twitterapi
 
   ##utilizing the twitter gem
   def initialize
-    api_key = '05vsmea7C8gOT4sHu3H9OIhtr'
-    api_secret = "QAuaAtxagVfksNjzklo2TG11vGzkAaSc8R7rSQX42yjo2vS4ab"
+    api_key = ENV["TWITTER_API_KEY_ID"]
+    api_secret = ENV["TWITTER_API_SECRET"]
     ##will be current_user.access_token
-    access_token = "2613734754-TER8zCABuodD7nhJlnccfE8cQctFDopDLjcBQw5"
-    access_token_secret = "y0cwDz3SL7dJgRdEkS6W8kWk31pgZ83xUKaYtTm2uzqV4"
+    access_token = ENV["TWITTER_ACCESS_TOKEN"]
+    access_token_secret = ENV["TWIITER_ACCESS_SECRET_TOKEN"]
 
     @twitter_client = Twitter::REST::Client.new do |config|
       config.consumer_key        = api_key

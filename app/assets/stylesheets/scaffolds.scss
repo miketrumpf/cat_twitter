@@ -1,6 +1,6 @@
 body {
-  background-color: #fff;
-  color: #333;
+  background-color: #C63D0F;
+  color: #FDF3E7;
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -20,20 +20,28 @@ pre {
 }
 
 a {
-  color: #000;
+  color: #67BCDB;
+  float: right;
 
   &:visited {
-    color: #666;
+    color: #67BCDB;
   }
 
   &:hover {
     color: #fff;
-    background-color: #000;
+    // background-color: #56a2bd;
+    text-shadow: 0 2px 2px rgba(0,0,0, 0.8);
+
+    text-decoration: none;
   }
 }
 
 th {
   padding-bottom: 5px;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  text-align: center;
+  font-size: 1.5vw;
 }
 
 td {
@@ -81,4 +89,73 @@ div {
 
 label {
   display: block;
+}
+
+.container {
+  text-align: center;
+  margin-top: 2vw;
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 4px 14px;
+  text-shadow: 0 1px 1px rgba(255,255,255,.75);
+  color: black;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-bottom-color: #bbb;
+  $shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  &:hover {
+    background-position: 0 -15px;
+    color: #333;
+    text-decoration: none;
+  }
+}
+.primary {
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  border: 1px solid darken(#0064CD, 10%);
+  border-bottom-color: darken(#0064CD, 15%);
+  &:hover {
+    color: #fff;
+  }
+}
+.input-group {
+  width: 25%;
+  text-align:center;
+  margin: auto;
+}
+
+.input-group .form-control {
+  margin-bottom: 1vw;
+}
+
+.btn-group {
+  margin-top: 1vw;
+}
+
+
+.my_btn {
+  display: inline-block;
+  padding: 4px 14px;
+  text-shadow: 0 1px 1px rgba(255,255,255,.75);
+  color: black;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-bottom-color: #bbb;
+  $shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  &:hover {
+    background-position: 0 -15px;
+    color: #333;
+    text-decoration: none;
+  }
+}
+
+button {
+  color: black;
+}
+
+.thumbnail {
+  margin-top: 1vw;
 }

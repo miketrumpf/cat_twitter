@@ -1,13 +1,17 @@
-<h1>Sign In</h1>
+<h2>Sign In</h2>
 
 
 <%= form_tag sessions_path do %>
+  <div class="input-group input-group-sm">
+    <!-- <%= text_field_tag :twitter_handle, "", :id => "handle", placeholder: "Username", :class => "form-control" %> -->
+    <%= text_field_tag :email, params[:email], :placeholder => "email", :class => "form-control" %>
+    <%= password_field_tag :password, nil, placeholder: "password", class: "form-control" %>
+  </div>
 
-  <h3> Email </h3>
-  <%= text_field_tag :email, params[:email] %>
 
-  <h3>Password</h3>
-  <%= password_field_tag :password %>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <!-- <%= submit_tag "Search", :id => "search", :type => "submit", :class => "btn" %> -->
+    <%= submit_tag "Sign in", :class => "my_btn" %>
+  </div>
 
-  <%= submit_tag "Sign in" %>
 <% end %>

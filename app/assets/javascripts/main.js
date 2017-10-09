@@ -41,7 +41,7 @@ $(function() {
     $.ajax({
       url: '/mark_as_read',
       dataType: 'script',
-      method: "post",
+      method: "get",
       data: {tweetId},
       success: function(result) {
         console.log("hit success callback")
