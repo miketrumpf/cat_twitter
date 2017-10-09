@@ -8,10 +8,11 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path
     else
-      render 'new'
+      flash[:notice] = "Your username or password were incorrect, please try again"
+      redirect_to sign_in_path
     end
   end
-  
+
   ##logout
   def destroy
     session[:user_id] = nil

@@ -1,14 +1,14 @@
-<!-- <p id="notice"><%= notice %></p> -->
+<p id="notice"><%= notice %></p>
 <h3><%= link_to "Logout", "/sessions/#{session[:user_id]}", method: :delete %></h5>
 
 
 <div class="container">
   <div class="row">
     <div class="column"
-      <%= form_tag("search", remote: true) do %>
+      <%= form_tag("search") do  %>
         <h2> Twitter Handle </h2>
         <div class="input-group input-group-sm">
-          <%= text_field_tag :twitter_handle, "", :id => "handle", placeholder: "Username", :class => "form-control" %>
+          <%= text_field_tag :twitter_handle, nil, :required => true,  :id => "handle", placeholder: "Username", :class => "form-control" %>
         </div>
         <div class="btn-group" role="group" aria-label="Basic example">
           <%= submit_tag "Search", :id => "search", :type => "submit", :class => "btn" %>
