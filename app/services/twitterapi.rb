@@ -7,7 +7,7 @@ class Twitterapi
     api_secret = ENV["TWITTER_API_SECRET"]
     ##will be current_user.access_token
     access_token = ENV["TWITTER_ACCESS_TOKEN"]
-    access_token_secret = ENV["TWIITER_ACCESS_SECRET_TOKEN"]
+    access_token_secret = ENV["TWITTER_ACCESS_SECRET_TOKEN"]
 
     @twitter_client = Twitter::REST::Client.new do |config|
       config.consumer_key        = api_key
