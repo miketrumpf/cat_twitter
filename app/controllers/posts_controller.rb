@@ -1,8 +1,6 @@
 class PostsController < ApplicationController
 
-  # GET /posts
-  # GET /posts.json
-  ## get twitter posts by user handle paramater
+  #root path
   def index
   end
 

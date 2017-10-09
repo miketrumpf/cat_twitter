@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "/sign_in" => "sessions#new"
   get "/sign_in_partial" => "users#sign_in_partial"
   get "/sign_up_partial" => "users#sign_up_partial"
+  ##webhook for oauthing 
   post "/callbacks" => "users#callbacks"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -8,25 +8,6 @@ class UsersController < ApplicationController
   def sign_up_partial
     @user = User.new
   end
-  # def go_to_twitter
-  #   # query = {
-  #   #   "method"     => "neworder",
-  #   #   "nonce"      => 1404996028,
-  #   #   "order_type" => "buy",
-  #   #   "quantity"   => 1,
-  #   #   "rate"       => 1
-  #   # }
-  #   headers = {
-  #     "key"  => "05vsmea7C8gOT4sHu3H9OIhtr"
-  #   }
-  #
-  #   HTTParty.post(
-  #     "api.twitter.com/1.1/statuses/update.json?include_entities=true",
-  #     # :query => query,
-  #     :headers => headers
-  #   )
-  #
-  # end
 
   # POST /users
   # POST /users.json
@@ -46,7 +27,6 @@ class UsersController < ApplicationController
   end
 
   def callbacks
-    binding.pry
   end
 
 
