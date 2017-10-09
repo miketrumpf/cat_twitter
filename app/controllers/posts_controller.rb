@@ -15,6 +15,12 @@ class PostsController < ApplicationController
     @posts = PostsHelper.get_good_posts(posts, current_user.id)
   end
 
+  def mark_as_read
+    ##create post in db. add relation in js.erb remove this post. how to grab it?
+    post = Post.create(tweet_id: params["tweetId"])
+    PostsUsers.create(post_id: post.id, user_id: current_user.id, tweet_id: post.tweet_id)
+  end
+
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   ##when user marks post as read create entry on join table user_id post_id via twitter

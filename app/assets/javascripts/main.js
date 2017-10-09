@@ -31,4 +31,26 @@ $(function() {
       data: {twitterHandle}
     }); // end ajax
   }); // end click
+
+  //mark post as read
+  $("body").on("click", "#read_button", function(e){
+    e.preventDefault();
+    //get tweet_id
+    var tweetId = $(this).data().tweetId
+    $(this).parent().parent().remove()
+    $.ajax({
+      url: '/mark_as_read',
+      dataType: 'script',
+      method: "post",
+      data: {tweetId},
+      success: function(result) {
+        console.log("hit success callback")
+      },
+      error: function() {
+        console.log("hit error callback")
+      }
+    }); // end ajax
+  }); // end click
+
+
 });
