@@ -1,6 +1,7 @@
-require "httparty"
-class Twitterapi
+require 'singleton'
 
+class Twitterapi
+  include Singleton
   ##utilizing the twitter gem
   def initialize
     api_key = ENV["TWITTER_API_KEY_ID"]

@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   ##from an ajax call
   def search
     ##twitter gem. intitialize client and get posts from twitter handle input by user
-    twitter_api = Twitterapi.new
+    twitter_api = Twitterapi.instance
     posts = twitter_api.get_timeline_posts(params["twitterHandle"])
     ##make sure they are posts that have not been read
     @posts = PostsHelper.get_good_posts(posts, current_user.id)
